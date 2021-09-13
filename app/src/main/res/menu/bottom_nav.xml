@@ -5,27 +5,34 @@
       android:id="@+id/home_button"
       android:title="Home"
       android:icon="@drawable/home_nav_icon"
-      app:cnb_iconColor = "@color/bottom_nav_icons"
+      app:cnb_iconColor = "@color/teal_700"
       />
 
     <item
         android:id="@+id/Country_button"
         android:title="Updates"
         android:icon="@drawable/india_covid_update"
-        app:cnb_iconColor = "@color/bottom_nav_icons"
+        app:cnb_iconColor = "@color/teal_700"
 
         />
     <item
         android:id="@+id/vaccination_button"
         android:title="Vaccine"
         android:icon="@drawable/vaccine_nav_icon"
-        app:cnb_iconColor = "@color/bottom_nav_icons"
+        app:cnb_iconColor = "@color/teal_700"
         />
+
+  <item
+      android:id="@+id/nearByCenters_button"
+      android:title="NearMe"
+      android:icon="@drawable/ic_baseline_location_on_24"
+      app:cnb_iconColor = "@color/teal_700"
+      />
 
     <item
         android:id="@+id/info_button"
-        android:title="coWIN"
+        android:title="Cowin"
         android:icon="@drawable/info_nav_icon"
-        app:cnb_iconColor = "@color/bottom_nav_icons"
+        app:cnb_iconColor = "@color/teal_700"
         />
 </menu>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="17dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="10dp"
     android:orientation="vertical"
@@ -131,6 +131,17 @@
 
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/button_background"
+        android:visibility="visible"
+        android:layout_gravity="center_vertical"
+        />
+
 
 
 

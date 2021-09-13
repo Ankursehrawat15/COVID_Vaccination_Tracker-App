@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragment.Vaccine_Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        >
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vaccination Slot"
+                    android:drawableEnd="@drawable/ic_baseline_vaccines_24"
+                    android:textSize="20sp"
+                    android:drawablePadding="5dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Find your Vaccination Slot near you by using pincode of your area. Here enter pincode and click on find button then enter the date to check availaibility of vaccine"
+                    android:textSize="15sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_margin="3dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/regular"/>
+            <EditText
+                android:id="@+id/idEditPinCode"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/custom_input_pincode"
+                android:layout_margin="15dp"
+                android:paddingStart="15dp"
+                android:inputType="number"
+                android:paddingEnd="15dp"
+                android:drawableStart="@drawable/custom_pincode_icon"
+                android:hint="Enter PinCode"
+                android:drawablePadding="12dp"/>
+
+
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="14dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_button_background"
+                android:text="Find"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRvCenter"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/center_rv_item"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/PBLoading"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

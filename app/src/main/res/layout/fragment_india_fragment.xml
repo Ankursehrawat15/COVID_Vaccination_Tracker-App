@@ -22,11 +22,12 @@
 
         <ImageView
             android:id="@+id/indian_flag"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+         android:layout_marginBottom="17dp"
             android:padding="2dp"
-            android:src="@drawable/indian_flag"
+            android:src="@drawable/mask"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -36,12 +37,13 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/bold"
+            android:padding="5dp"
             android:text="Across India"
             android:textColor="#1E2432"
             android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -337,6 +339,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:padding="10dp"
+
         android:text="All State/UT States"
         android:textColor="#1E2432"
         android:fontFamily="@font/bold"
@@ -353,7 +357,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         android:layout_height="match_parent" />
-
 
 
 </LinearLayout>
