@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="14dp"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:id="@+id/idTVCenterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/bold"
+            android:text=" Center Name"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            android:layout_margin="3dp"
+            app:drawableStartCompat="@drawable/ic_baseline_medical_services_24" />
+
+        <TextView
+            android:id="@+id/idTVCenterLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/medium"
+            android:layout_below="@id/idTVCenterName"
+            android:text="Center Location"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            android:layout_margin="3dp"
+            app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+
+
+        <TextView
+            android:id="@+id/TvVaccineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:textSize="15sp"
+            android:layout_below="@id/idTVCenterLocation"
+            android:text=" Vaccine Name"
+            android:textAllCaps="true"
+            android:padding="3dp"
+            android:textColor="@color/black"
+            android:layout_margin="3dp"
+            app:drawableStartCompat="@drawable/ic_baseline_vaccines_24" />
+
+        <LinearLayout
+            android:id="@+id/LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_below="@id/TvVaccineName"
+            >
+
+            <TextView
+                android:id="@+id/TVcenterTimmings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:text="Timming"
+                android:layout_margin="13dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/TvVaccineFee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:padding="4dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="VaccineFee"
+                android:textAlignment="center"
+                android:layout_margin="13dp"
+                android:textColor="@color/bottom_nav_icons"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="3dp"
+            android:layout_below="@+id/LL"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/TvAgeLimit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Age Limit"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_margin="13dp"/>
+            <TextView
+                android:id="@+id/TvVaccineAvailable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Availablity"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/light_red"
+                android:padding="3dp"
+                android:layout_margin="13dp"/>
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/button_background"
+        android:visibility="visible"
+        android:layout_gravity="center_vertical"
+      />
+
+
+
+</androidx.cardview.widget.CardView>
