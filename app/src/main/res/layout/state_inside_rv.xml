@@ -132,6 +132,17 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="2dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="0dp"
+        android:background="@drawable/button_background"
+        android:visibility="visible"
+        android:layout_gravity="center_vertical"
+        />
+
+
 
 
 </androidx.cardview.widget.CardView>
