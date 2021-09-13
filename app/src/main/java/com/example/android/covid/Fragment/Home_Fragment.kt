@@ -23,6 +23,7 @@ class Home_Fragment : Fragment() {
     lateinit var todaydeathsCases: TextView
     lateinit var todayrecoveredCases: TextView
     lateinit var criticalCases: TextView
+    lateinit var affectedCountries: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +47,7 @@ class Home_Fragment : Fragment() {
         todaydeathsCases = view.findViewById(R.id.globeDeaths)
         todayrecoveredCases = view.findViewById(R.id.globetodayRecovered)
         criticalCases = view.findViewById(R.id.globeCriticalCases)
+        affectedCountries = view.findViewById(R.id.countries_Affected)
 
         getTodayInfo()
     }
@@ -62,11 +64,12 @@ class Home_Fragment : Fragment() {
                         val todaydeath: Int = response.getInt("todayDeaths")
                         val todayrecover: Int = response.getInt("todayRecovered")
                         val criticalcas: Int = response.getInt("critical")
-
+                        val affected : Int = response.getInt("affectedCountries")
                         todayCases.text = todayCase.toString()
                         todaydeathsCases.text = todaydeath.toString()
                         todayrecoveredCases.text= todayrecover.toString()
                         criticalCases.text = criticalcas.toString()
+                        affectedCountries.text = affected.toString()
                     }catch (e: JSONException){
                         e.printStackTrace()
                     }
