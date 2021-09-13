@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/home_button"
+      android:title="Home"
+      android:icon="@drawable/home_nav_icon"
+      app:cnb_iconColor = "@color/bottom_nav_icons"
+      />
+
+    <item
+        android:id="@+id/Country_button"
+        android:title="Updates"
+        android:icon="@drawable/india_covid_update"
+        app:cnb_iconColor = "@color/bottom_nav_icons"
+
+        />
+    <item
+        android:id="@+id/vaccination_button"
+        android:title="Vaccine"
+        android:icon="@drawable/vaccine_nav_icon"
+        app:cnb_iconColor = "@color/bottom_nav_icons"
+        />
+
+    <item
+        android:id="@+id/info_button"
+        android:title="coWIN"
+        android:icon="@drawable/info_nav_icon"
+        app:cnb_iconColor = "@color/bottom_nav_icons"
+        />
+</menu>
