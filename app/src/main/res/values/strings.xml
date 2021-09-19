@@ -2,5 +2,10 @@
     <string name="app_name">Covid Plus</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allow">Allow</string>
+    <string name="get_nearby_vaccination_centers_with_just_giving_access_to_your_location">Get Nearby Vaccination Centers with Just giving access to your location</string>
+    <string name="vaccination_center">Vaccination Center</string>
+    <string name="enter_pincode">Enter PinCode</string>
+
 
 </resources>
