@@ -15,6 +15,7 @@ Live Location Feature Works like this: After getting the users live location its
 [Watch How App Works](##)
 
 ## ✨ Screenshots
+ These Doesn't Explain Much go watch the demo.
 ![Covid Plus App](https://github.com/Ankursehrawat15/COVID_Vaccination_Tracker-App/blob/master/ScreenShots/image1.jpeg)
 
 
