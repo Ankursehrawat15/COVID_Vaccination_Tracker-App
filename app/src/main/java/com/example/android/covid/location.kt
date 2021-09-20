@@ -12,13 +12,33 @@ import android.os.Looper
 import android.provider.Settings
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.example.android.covid.AdapterRV.LocationWise_VcRVAdapter
+import com.example.android.covid.AdapterRV.VaccinationCenterRV
+import com.example.android.covid.Model.CenterRVModel
+import com.example.android.covid.Model.LocationWiseCenterModel
 import com.google.android.gms.location.*
+import org.json.JSONException
+import kotlin.properties.Delegates
 
 class location : AppCompatActivity() {
 
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    lateinit var loadingPB : ProgressBar
+   private  var latitude :String = ""
+    private var longitude : String = ""
+    lateinit var centerList: List<LocationWiseCenterModel>
+    lateinit var centerRV : RecyclerView
+    lateinit var centerRVAdapter: LocationWise_VcRVAdapter
+
 
     private val callback = object: LocationCallback(){
         override fun onLocationAvailability(p0: LocationAvailability) {
@@ -29,8 +49,8 @@ class location : AppCompatActivity() {
 
             val lastLocation = result.lastLocation
 
-            findViewById<TextView>(R.id.latitude_textView).text = lastLocation.latitude.toString()
-            findViewById<TextView>(R.id.longitude_textView).text = lastLocation.longitude.toString()
+             latitude = lastLocation.latitude.toString()
+            longitude = lastLocation.longitude.toString()
             super.onLocationResult(result)
         }
     }
@@ -38,18 +58,21 @@ class location : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-
+        loadingPB = findViewById(R.id.PBLoading_VC)
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
          onGPS()
+        requestLocation()
 
-        val loc = findViewById<Button>(R.id.button)
+        val getData : Button = findViewById(R.id.fetchData)
 
-        loc.setOnClickListener {
-            requestLocation()
+        centerRV = findViewById(R.id.vaccinationCenterRV)
+        centerList = ArrayList<LocationWiseCenterModel>()
+        getData.setOnClickListener {
+            loadingPB.setVisibility(View.VISIBLE)
+            if(!(latitude.isEmpty() && longitude.isEmpty())) {
+                getVaccineDetails(latitude, longitude)
+            }
         }
-
-
-
 
     }
 
@@ -95,4 +118,49 @@ class location : AppCompatActivity() {
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                 locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
+
+    private fun getVaccineDetails(lat : String  , lon : String){
+        val url = "https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat="+lat+"&long="+lon
+        val queue = Volley.newRequestQueue(this@location)
+        val request = JsonObjectRequest(Request.Method.GET,url,null,{
+            response ->
+            loadingPB.setVisibility(View.GONE)
+            try {
+                val centerArray = response.getJSONArray("centers")
+                if(centerArray.length() == 0){
+                    Toast.makeText(this,"No Vaccination Centers Available Near your Location", Toast.LENGTH_LONG).show()
+
+                }
+                for(i in 0 until centerArray.length()){
+                    val centerObj = centerArray.getJSONObject(i)
+                    val center_Name: String = centerObj.getString("name")
+                    val center_Address: String = centerObj.getString("location")
+                    val center_Id : Int = centerObj.getInt("center_id")
+                    val center_state : String = centerObj.getString("state_name")
+                    val center_district : String = centerObj.getString("district_name")
+
+                    val center = LocationWiseCenterModel(center_Id , center_Name ,center_district, center_state , center_Address)
+                    centerList = centerList+center
+                }
+
+                centerRVAdapter = LocationWise_VcRVAdapter(centerList)
+                centerRV.layoutManager = LinearLayoutManager(this)
+                centerRV.adapter = centerRVAdapter
+
+
+            }catch (e: JSONException){
+                e.printStackTrace()
+            }
+
+        },
+                {
+                    error ->
+                    loadingPB.setVisibility(View.GONE)
+                    Toast.makeText(this, "Fail to get data", Toast.LENGTH_SHORT).show()
+                })
+        queue.add(request)
+    }
+
+
+
 }

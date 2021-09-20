@@ -6,6 +6,14 @@
     <string name="get_nearby_vaccination_centers_with_just_giving_access_to_your_location">Get Nearby Vaccination Centers with Just giving access to your location</string>
     <string name="vaccination_center">Vaccination Center</string>
     <string name="enter_pincode">Enter PinCode</string>
+    <string name="vaccination_centers">Vaccination Centers</string>
+    <string name="center_name">Center Name</string>
+    <string name="district">DISTRICT</string>
+    <string name="state">STATE</string>
+    <string name="centerid">Centerid</string>
+    <string name="center_location">Center Location</string>
+    <string name="get_nearby_center">GET Nearby Center</string>
+    <string name="check_vaccination_slot">Check Vaccination Slot</string>
 
 
 </resources>

@@ -29,6 +29,7 @@ class NearMe : Fragment() {
         }
 
 
+
         return view
     }
 
