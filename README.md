@@ -1,8 +1,10 @@
 <h1 align="center">
   <img src="https://github.com/Ankursehrawat15/COVID_Vaccination_Tracker-App/blob/master/ScreenShots/mask.png" width="136" alt="icon">
+  <h2 Covid-Plus>
+  </h2>  
   COVID-PLUS
 </h1>
-COVID-PLUS
+
 
 ## 🌟 About
 1 .An Android App which Gives Detailed Active Stats of Covid-19. 
