@@ -1,5 +1,6 @@
 <h1 align="center">
   <img src="https://github.com/Ankursehrawat15/COVID_Vaccination_Tracker-App/blob/master/ScreenShots/mask.png" width="136" alt="icon">
+  COVID-PLUS
 </h1>
 
 ## 🌟 About
