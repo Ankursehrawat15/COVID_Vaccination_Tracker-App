@@ -11,11 +11,8 @@
         android:id="@+id/fragment_container"
         android:name="com.example.android.covid.Fragment.Home_Fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+       >
     </androidx.fragment.app.FragmentContainerView>
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar

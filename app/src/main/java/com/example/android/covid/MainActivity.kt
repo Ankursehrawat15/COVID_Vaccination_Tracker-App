@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.example.android.covid.Fragment.Home_Fragment
-import com.example.android.covid.Fragment.India_fragment
-import com.example.android.covid.Fragment.NearMe
-import com.example.android.covid.Fragment.Vaccine_Fragment
+import com.example.android.covid.Fragment.*
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 
@@ -31,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.Country_button -> fragment = India_fragment()
                 R.id.vaccination_button -> fragment = Vaccine_Fragment()
                 R.id.nearByCenters_button -> fragment = NearMe()
+                R.id.info_button -> fragment = Info_fragment()
             }
             if (fragment != null){
                 supportFragmentManager.beginTransaction()
