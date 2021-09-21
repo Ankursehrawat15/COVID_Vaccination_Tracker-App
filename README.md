@@ -7,7 +7,10 @@
 
 
 
+
+
 ## 🌟 About
+
 1 .An Android App which Gives Detailed Active Stats of Covid-19. 
 2. Also Shows Stats of India with All the States in updates Fragment.
 3 .User can enter the PinCode and Date to check the vaccine slots near his/her Area.
